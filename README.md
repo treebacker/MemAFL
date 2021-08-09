@@ -11,17 +11,21 @@ A Fuzz Tool Based On AFL, main source code are in `MemAFL/mm_metric`。
   These interesting strings will be used in matation, to find potential bugs.
 
 * Memory sensitive
+
   * MemAFL will record mem-operation in the execution path, will select the seed which does more mem-operetions.
   * MemAFL will record mem-functions in the execution path, such as `malloc`、`free` and so on.
-  * 
+
+* Sub function
+
+  MemAFL record `call` times in the execution path，it  selects the seed which calls more sub functions to cover more paths in a fuzz loop.
+
 * Reduce Hash collision
+
   * By Reducing redundant Instrumentation, memAFL can reduce hash collision.
 
 ##### Found CVEs
 
-![](testcases\images\png\cve.png)
-
-
+[![fGaxg0.png](https://z3.ax1x.com/2021/08/10/fGaxg0.png)](https://imgtu.com/i/fGaxg0)
 
 #### Dependence
 
@@ -30,7 +34,7 @@ A Fuzz Tool Based On AFL, main source code are in `MemAFL/mm_metric`。
 
 #### Install
 
-* Compile AFl
+* Compile MemAFL
 
   ```
   cd MemAFL
